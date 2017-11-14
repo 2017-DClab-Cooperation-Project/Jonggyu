@@ -1,0 +1,17 @@
+{
+  "name": "kr.co.rcube.sharecontacts",
+  "version": "1.0.0",
+  "displayName": "ShareContacts",
+  "cordova": {
+    "platforms": [
+      "android"
+    ],
+    "plugins": {
+      "cordova-plugin-whitelist": {}
+    }
+  },
+  "dependencies": {
+    "cordova-android": "^6.3.0",
+    "cordova-plugin-whitelist": "1"
+  }
+}

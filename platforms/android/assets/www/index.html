@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>SHARE CONTACTS</title>
+	<link rel="stylesheet" href="./css/jquery.mobile-1.4.5.css">
+	
+	<link rel="stylesheet" href="./css/index.css">
+		
+	<script type="text/javascript" src="./js/jquery.js"></script>
+	<script type="text/javascript" src="./js/jquery.mobile-1.4.5.js"></script>
+	
+	<script type="text/javascript" src="cordova.js"></script>
+	<script type="text/javascript" src="./js/index.js"></script>
+</head>
+<body>
+<!-- Empty Page and it automatically redirect to home page -->
+<div data-role="page" id="empty">
+</div>
+
+
+<!-- This is a home page for showing lists of the first sentence of memo -->
+<div data-role="page" id="home">
+	<div data-role="header">
+		<h1>MEMO</h1>
+		<!-- Button for editor page -->
+		<a href="#editor" data-position-to="window" data-transition="pop" 
+		class="ui-btn ui-corner-all ui-icon-plus ui-btn-left ui-btn-icon-notext">ADD</a>
+	</div><!-- /header -->
+	<!-- index.js file will fill contents in here -->
+	<div class="ui-content" role="main">
+		<ul id="lst_grp" data-role="listview" data-icon="false">
+            <!--li>
+                <h3>CONTACT GROUP #1</h3>
+                <p><strong>2017-10-18</strong></p>
+            </li-->
+        </ul>
+	</div><!-- /content -->
+	<!-- I additionally implemeneted Delete all button to flush all data at that same time for better user experience -->
+	<div class="ui-block-c" position= "absolute" bottom = "8px" left= "16px"><a href="javascript:deleteAll()" class="ui-btn ui-corner-all ui-btn-b" >Delete ALL</a></div>
+
+</div><!-- /page -->
+
+<!-- This is the editor page where you can create a new memo -->
+<div data-role="page" id="editor">
+	
+	<div data-role="header">
+		<h1 id="grp_desc_header">MEMO</h1>
+		<!-- A botton for going back to Home -->
+		<a href="#home" class="ui-btn ui-corner-all ui-icon-carat-l ui-btn-left ui-btn-icon-notext">BACK</a>
+	</div><!-- /header -->
+    <textarea resize="none" style="overflow:auto;resize:none" rows="131" cols="200" id="new_memo" placeholder=""/></textarea>
+
+	<div class="ui-content" role="main">
+			
+  	 		<div class="ui-grid-a" style="position:fixed;bottom:0;width:92%">
+  	 		<!-- Save button to save the memo -->
+			<div class="ui-block-a"><a href="javascript:saveFile()" class="ui-btn ui-corner-all ui-btn-b" >Save</a></div>
+			<!-- Cancel the memo and go back to Home -->
+			<div class="ui-block-b"><a href="#home" class="ui-btn ui-corner-all ui-btn-b">Cancel</a></div>
+			</div><!-- /content -->
+	</div>
+
+</div>
+
+<!-- View page where you can see the whole content of a memo and modify it -->
+<div data-role="page" id="viewer">
+
+	<div data-role="header">
+		<h1>MEMO</h1>
+		<!-- A button for going back to home -->
+		<a href="#home" data-position-to="window" data-transition="pop" 
+		class="ui-btn ui-corner-all ui-icon-carat-l ui-btn-left ui-btn-icon-notext">BACK</a>
+	</div><!-- /header -->
+
+	<div class="ui-content" role="main">
+			<!-- Text area that shows the content of the clicked memo and can modify the content -->
+	    <textarea id="view_text_area" /></textarea>
+			<div class="ui-grid-a" style="position:fixed;bottom:0;width:92%">
+			<!-- This botton is used for saving the modified content -->
+			<div class="ui-block-a"><a href="javascript:modify()" class="ui-btn ui-corner-all ui-btn-b" >Modify</a></div>
+			<!-- This botton is used for going back to home -->
+			<div class="ui-block-b"><a href="#home" class="ui-btn ui-corner-all ui-btn-b">Back</a></div>
+			</div><!-- /content -->
+
+
+
+	</div><!-- /content -->
+
+</div><!-- /page -->
+
+</body>
+</html>

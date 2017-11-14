@@ -1,0 +1,20 @@
+.ui-page .ui-header{
+	background: #0099CC;
+	text-shadow: none;
+	color: #FFFFFF;
+}
+
+#grp_list ul li p{
+	float:right;
+}
+
+#grp_desc ul li p{
+	float:right;
+	font-size:1.2em;
+}
+
+#popupSelect-popup {
+    width: 90%;
+    left: 5%;
+    right: 5%
+}
